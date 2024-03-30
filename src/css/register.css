@@ -1,0 +1,38 @@
+.registerContainer {
+    text-align: center;
+  }
+  
+  .registerContainer h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .registerContainer label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .registerContainer input[type="email"],
+  .registerContainer input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .registerContainer button[type="submit"] {
+    background-color: #808080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .registerContainer button[type="submit"]:hover {
+    background-color: #f8f8f8;
+    color: black;
+  }
+  

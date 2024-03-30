@@ -1,0 +1,90 @@
+.dashboard-container {
+  background: url(../image/Default_i_am_creating_a_website_name_plant_detection_system_so_1.jpg); 
+  height: 100vh; /* Adjust the height as needed */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; /* Change to relative */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.dashboard-container::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-content {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login {
+  padding: 10px;
+  position: fixed;
+}
+
+.top button {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s;
+  font-size: 20px;
+  color: white;
+}
+
+.top button:hover {
+  background-color: #909190;
+}
+
+.loginBtn {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.loginBtn:hover {
+  background-color: #909190;
+}
+
+.main-content {
+  border: 10px;
+}
+
+.welcomeMsg{
+  margin-top: 16px;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.loginBtn{
+ margin-left: auto;
+
+}
+
+.login-container{
+  position: fixed;
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+}

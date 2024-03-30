@@ -1,0 +1,69 @@
+.upload_container{
+  display: flex;
+  color: rgb(255, 255, 255);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  overflow-y: auto;
+  margin: 90px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+  scroll-behavior: smooth;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.file_choose{
+    margin:20px auto;
+    display: flex;
+    justify-content: center;
+}
+.predict_btn{
+    border: 2px solid rgb(2, 168, 2);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: rgb(2, 168, 2);
+}
+.predict_btn:hover{
+    cursor: pointer;
+    background-color: rgb(2, 168, 2);
+    color: white;
+    transition: all 0.3s;
+}
+
+.uploaded_img{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    gap: 1.5rem;
+}
+.uploaded_img_head{
+    font-size: 28px;
+    font-weight:100;
+}
+.uploaded_original_img{
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.uploaded_original_img img{
+    height: 200px;
+}
+.predicted_disease{
+    font-size: 26px;
+    font-weight: 100;
+}
+
+.show{
+    display: flex;
+}
+.hidden{
+    display: hidden;
+}
+
+.information{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
