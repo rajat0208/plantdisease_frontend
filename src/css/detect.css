@@ -11,6 +11,16 @@
   flex-direction: column;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  height: 600px;
+}
+
+.upload_container::-webkit-scrollbar{
+    display: none;
+}
+
+.uploadhead{
+    margin-left: 400px;
+    align-items: center;
 }
 .file_choose{
     margin:20px auto;
@@ -31,15 +41,16 @@
 }
 
 .uploaded_img{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin: 20px auto;
-    gap: 1.5rem;
 }
 .uploaded_img_head{
     font-size: 28px;
     font-weight:100;
+    align-items: center;
 }
 .uploaded_original_img{
     width:40%;
@@ -50,9 +61,20 @@
 .uploaded_original_img img{
     height: 200px;
 }
+
+.blank_square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; 
+  }
+
 .predicted_disease{
-    font-size: 26px;
-    font-weight: 100;
+    font-size: 16px; /* Adjust font size as needed */
+    margin-left: 10px;
 }
 
 .show{
@@ -63,7 +85,31 @@
 }
 
 .information{
-    display: flex;
-    flex-direction: row;
-    gap: 80px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
+
+.soltuion{
+    margin-left: -10px;
+}
+
+.loading-spinner {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Apply animation */
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

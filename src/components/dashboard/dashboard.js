@@ -6,6 +6,7 @@ import Detect from '../detect';
 import Login from '../../auth/login';
 import Register from '../../auth/register';
 import "../../index.css"
+import { TiArrowSortedDown } from "react-icons/ti";
 
 const Dashboard = () => {
   const [selectedTab, setSelectedTab] = useState('home');
@@ -13,6 +14,7 @@ const Dashboard = () => {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Add state for tracking login status
   const [username, setUsername] = useState(''); // Add state for storing username
+  const [showLogoutDropdown, setShowLogoutDropdown] = useState(false); // State to track logout dropdown menu
   const modalRef = useRef(null);
 
   const toggleLoginModal = () => {
@@ -51,13 +53,16 @@ const Dashboard = () => {
     setShowLoginModal(false); // Close the login modal
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false); // Clear login status
+    setUsername(''); // Clear username
+    setShowLogoutDropdown(false); // Close logout dropdown
+  };
+
   return (
     <div className='dashboard-container'>
       <div className='header'>
         <div className="top">
-          <div className={selectedTab === 'about' ? 'active' : ''}>
-            <button onClick={() => setSelectedTab('about')}>About</button>
-          </div>
           <div className={selectedTab === 'home' ? 'active' : ''}>
             <button onClick={() => setSelectedTab('home')}>Home</button>
           </div>
@@ -66,10 +71,22 @@ const Dashboard = () => {
           </div>
           {/* Conditionally render welcome message with username if logged in */}
         </div>
+        {isLoggedIn && (
+            <div className="dropdown">
+              <button onClick={() => setShowLogoutDropdown(!showLogoutDropdown)}>
+                <TiArrowSortedDown />
+              </button>
+              {showLogoutDropdown && (
+                <div className="dropdown-content">
+                  <button onClick={handleLogout}>Logout</button>
+                </div>
+              )}
+            </div>
+          )}
         <div className='login-container'>
         {isLoggedIn ? (
             <div className='loginBtn'>
-              <div className='welcomeMsg'>Welcome, {username}</div>
+              <div className='welcomeMsg'>Welcome, {username}<button><TiArrowSortedDown /></button></div>
             </div>
           ) : (
             <div className='loginBtn'>
@@ -82,7 +99,6 @@ const Dashboard = () => {
         {/* Main content based on selected tab */}
         {selectedTab === 'home' && <Blog />}
         {selectedTab === 'detect' && <Detect />}
-        {selectedTab === 'about' && <h2>Upload Image</h2>}
       </div>
       {(showLoginModal || showRegisterModal) && (
         <div className='modal' ref={modalRef}>

@@ -12,7 +12,7 @@ const Register = ({ onClose }) => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://192.168.10.70:8000/api/register/', {
+      const response = await axios.post('http://192.168.222.145:8000/api/register/', {
         email,
         password,
         username, // Include username in the request
