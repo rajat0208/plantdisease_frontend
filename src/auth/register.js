@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../css/register.css';
 import axios from 'axios'; // Import axios for making HTTP requests
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
 const Register = ({ onClose }) => {
   const [email, setEmail] = useState('');
@@ -19,10 +20,20 @@ const Register = ({ onClose }) => {
       });
 
       console.log('Registration successful:', response.data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Register Successful!',
+        text: 'You are now registered.',
+      });
       // Optionally, you can redirect the user to another page or show a success message
     } catch (error) {
       setError('Registration failed. Please try again.');
       console.error('Registration error:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Registration Failed',
+        text: 'Please check your credentials and try again.',
+      });
     }
   };
 

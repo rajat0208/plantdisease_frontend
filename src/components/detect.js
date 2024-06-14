@@ -100,12 +100,12 @@ export default function Detect() {
             </div>
           </div>
         </div>
-        <button
+        {/* <button
           className='accuracy-btn'
           onClick={handleShowAccuracy}
         >
           Show Accuracy
-        </button>
+        </button> */}
         {showAccuracy && <AccuracyPopup accuracyData={accuracyData} onClose={() => setShowAccuracy(false)} />}
       </div>
     </>
